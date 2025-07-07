@@ -14,6 +14,7 @@ const typeDefs = gql` #graphql
     type Mutation{
         addTodo(title: String!): Todo
         deleteTodo(id: ID!): String
+        updateTodo(id: ID!, title:String, completed: Boolean): Todo
     }
 `
 

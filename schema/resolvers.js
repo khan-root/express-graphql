@@ -12,6 +12,17 @@ const resolvers = {
         deleteTodo: async(_,{id})=>{
             await Todo.findByIdAndDelete(id)
             return "Todo Deleted Successfully"
+        },
+        updateTodo: async(_, {id, title, completed})=>{
+            const findTodo = await Todo.findById(id)
+            if(findTodo){
+                let updatedFields = {}
+                updatedFields.title = title
+                updatedFields.completed = completed
+
+                const updatedTodo = await Todo.findByIdAndUpdate(id, updatedFields, {new: true})
+                return updatedTodo
+            }
         }
     }
 }
