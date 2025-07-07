@@ -11,10 +11,6 @@ const port = process.env.PORT
 const mongo_uri = process.env.MONGO_URI
 
 
-app.get('/health', (req, res)=>{
-    console.log(res.send("Hello"))
-})
-
 
 const createServer = async()=>{
     try{

@@ -10,6 +10,11 @@ const typeDefs = gql` #graphql
     type Query{
         todos: [Todo]
     }
+
+    type Mutation{
+        addTodo(title: String!): Todo
+        deleteTodo(id: ID!): String
+    }
 `
 
 export default typeDefs
